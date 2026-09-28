@@ -48,6 +48,9 @@ class SckEnhancedSelection extends eZPersistentObject
      */
     static function fetch( $contentObjectAttributeId, $contentObjectAttributeVersion, $identifier )
     {
+        if ( !self::attributeKey( $contentObjectAttributeId, $contentObjectAttributeVersion ) )
+            return null;
+
         return eZPersistentObject::fetchObject(
             self::definition(),
             null,
@@ -69,6 +72,9 @@ class SckEnhancedSelection extends eZPersistentObject
      */
     static function fetchByAttribute( $contentObjectAttributeId, $contentObjectAttributeVersion )
     {
+        if ( !self::attributeKey( $contentObjectAttributeId, $contentObjectAttributeVersion ) )
+            return array();
+
         $result = eZPersistentObject::fetchObjectList(
             self::definition(),
             null,
@@ -96,6 +102,9 @@ class SckEnhancedSelection extends eZPersistentObject
      */
     static function countByAttribute( $contentObjectAttributeId, $contentObjectAttributeVersion )
     {
+        if ( !self::attributeKey( $contentObjectAttributeId, $contentObjectAttributeVersion ) )
+            return 0;
+
         return eZPersistentObject::count(
             self::definition(),
             array(
@@ -113,6 +122,10 @@ class SckEnhancedSelection extends eZPersistentObject
      */
     static function removeByAttribute( $contentObjectAttributeId, $contentObjectAttributeVersion = null )
     {
+        $versionForCheck = $contentObjectAttributeVersion === null ? 0 : $contentObjectAttributeVersion;
+        if ( !self::attributeKey( $contentObjectAttributeId, $versionForCheck ) )
+            return;
+
         $conditions = array(
             'contentobject_attribute_id' => $contentObjectAttributeId
         );
@@ -126,5 +139,17 @@ class SckEnhancedSelection extends eZPersistentObject
             self::definition(),
             $conditions
         );
+    }
+
+    /**
+     * Normalizes an attribute id and version to integers, in place. False when
+     * the attribute has no id yet (not stored): nothing can be stored for it,
+     * and PostgreSQL refuses to compare an integer column with ''.
+     */
+    protected static function attributeKey( &$contentObjectAttributeId, &$contentObjectAttributeVersion )
+    {
+        $contentObjectAttributeId = (int)$contentObjectAttributeId;
+        $contentObjectAttributeVersion = (int)$contentObjectAttributeVersion;
+        return $contentObjectAttributeId > 0;
     }
 }
