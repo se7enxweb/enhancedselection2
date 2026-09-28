@@ -3,15 +3,15 @@
      i18n_context="extension/enhancedselection2/class/edit"}
 
 <fieldset>
-    <legend>{"Option list"|i18n($i18n_context)}</legend>
+    <legend>{"Option list"|i18n( 'extension/enhancedselection2/class/edit' )}</legend>
 
     {section show=count($content.options)|gt(0)}
         <table class="list" cellspacing="0">
             <tr>
                 <th style="width: 1%;">&nbsp;</th>
-                <th>{"Name"|i18n($i18n_context)}</th>
-                <th>{"Identifier"|i18n($i18n_context)}</th>
-                <th>{"Priority"|i18n($i18n_context)}</th>
+                <th>{"Name"|i18n( 'extension/enhancedselection2/class/edit' )}</th>
+                <th>{"Identifier"|i18n( 'extension/enhancedselection2/class/edit' )}</th>
+                <th>{"Priority"|i18n( 'extension/enhancedselection2/class/edit' )}</th>
                 <th style="width: 1%;">&nbsp;</th>
             </tr>
 
@@ -57,14 +57,14 @@
                                    src={$upImage|ezimage}
                                    name="CustomActionButton[{$id}_move_up]"
                                    value="{$option_row.index}"
-                                   title="{'Move up'|i18n($i18n_context)}"
+                                   title="{'Move up'|i18n( 'extension/enhancedselection2/class/edit' )}"
                                    {section show=$upEnabled|not}disabled="disabled"{/section} />
 
                             <input type="image"
                                    src={$downImage|ezimage}
                                    name="CustomActionButton[{$id}_move_down]"
                                    value="{$option_row.index}"
-                                   title="{'Move down'|i18n($i18n_context)}"
+                                   title="{'Move down'|i18n( 'extension/enhancedselection2/class/edit' )}"
                                    {section show=$downEnabled|not}disabled="disabled"{/section} />
                             {/let}
                         </div>
@@ -77,77 +77,77 @@
     <div class="block">
         <input type="submit"
                class="button"
-               value="{'New option'|i18n($i18n_context)}"
+               value="{'New option'|i18n( 'extension/enhancedselection2/class/edit' )}"
                name="CustomActionButton[{$id}_new_option]" />
 
         <input type="submit"
                {section show=count($content.options)|gt(0)}class="button"{section-else}disabled="disabled"{/section}
-               value="{'Remove selected option(s)'|i18n($i18n_context)}"
+               value="{'Remove selected option(s)'|i18n( 'extension/enhancedselection2/class/edit' )}"
                name="CustomActionButton[{$id}_remove_optionlist]" />
 
         {* Sorting 1 option doesn't make sense *}
         <input type="submit"
                {section show=count($content.options)|gt(1)}class="button"{section-else}disabled="disabled"{/section}
-               value="{'Sort options'|i18n($i18n_context)}"
+               value="{'Sort options'|i18n( 'extension/enhancedselection2/class/edit' )}"
                name="CustomActionButton[{$id}_sort_optionlist]" />
 
         <select {section show=count($content.options)|le(1)}disabled="disabled"{/section}
                 name="ContentClass_sckenhancedselection_sort_order_{$id}">
-            <option value="alpha_asc">{"A-Z"|i18n($i18n_context)}</option>
-            <option value="alpha_desc">{"Z-A"|i18n($i18n_context)}</option>
-            <option value="prior_asc">{"Priority"|i18n($i18n_context)}</option>
+            <option value="alpha_asc">{"A-Z"|i18n( 'extension/enhancedselection2/class/edit' )}</option>
+            <option value="alpha_desc">{"Z-A"|i18n( 'extension/enhancedselection2/class/edit' )}</option>
+            <option value="prior_asc">{"Priority"|i18n( 'extension/enhancedselection2/class/edit' )}</option>
         </select>
     </div>
 </fieldset>
 
 <fieldset>
-    <legend>{"Field input settings"|i18n($i18n_context)}</legend>
+    <legend>{"Field input settings"|i18n( 'extension/enhancedselection2/class/edit' )}</legend>
 
     <div class="block">
         <div class="element">
-            <label>{"Expanded"|i18n($i18n_context)}:</label>
+            <label>{"Expanded"|i18n( 'extension/enhancedselection2/class/edit' )}:</label>
             <input type="checkbox"
                    name="ContentClass_sckenhancedselection_expanded_{$id}"
                    {section show=$content.is_expanded}checked="checked"{/section} />
         </div>
 
         <div class="element">
-            <label>{"Multiple"|i18n($i18n_context)}:</label>
+            <label>{"Multiple"|i18n( 'extension/enhancedselection2/class/edit' )}:</label>
             <input type="checkbox"
                    name="ContentClass_sckenhancedselection_multi_{$id}"
                    {section show=$content.is_multiselect}checked="checked"{/section} />
         </div>
     </div>
     <div class="block alert alert-info">
-        <label>Input formats:</label>
+        <label>{'Input formats:'|i18n( 'extension/enhancedselection2/class/edit' )}</label>
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Element Type</th>
-                <th>Expanded</th>
-                <th>Multiple</th>
+                <th>{'Element Type'|i18n( 'extension/enhancedselection2/class/edit' )}</th>
+                <th>{'Expanded'|i18n( 'extension/enhancedselection2/class/edit' )}</th>
+                <th>{'Multiple'|i18n( 'extension/enhancedselection2/class/edit' )}</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Select (single choice)</td>
-                <td>false</td>
-                <td>false</td>
+                <td>{'Select (single choice)'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
+                <td>{'false'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
+                <td>{'false'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
             </tr>
             <tr>
-                <td>Select (multiple choices)</td>
-                <td>false</td>
-                <td>true</td>
+                <td>{'Select (multiple choices)'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
+                <td>{'false'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
+                <td>{'true'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
             </tr>
             <tr>
-                <td>Radio buttons</td>
-                <td>true</td>
-                <td>false</td>
+                <td>{'Radio buttons'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
+                <td>{'true'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
+                <td>{'false'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
             </tr>
             <tr>
-                <td>Checkboxes</td>
-                <td>true</td>
-                <td>true</td>
+                <td>{'Checkboxes'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
+                <td>{'true'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
+                <td>{'true'|i18n( 'extension/enhancedselection2/class/edit' )}</td>
             </tr>
             </tbody>
         </table>
@@ -155,10 +155,10 @@
 </fieldset>
 
 <fieldset>
-    <legend>{"Other settings"|i18n($i18n_context)}</legend>
+    <legend>{"Other settings"|i18n( 'extension/enhancedselection2/class/edit' )}</legend>
     <div class="block">
         <div class="element">
-            <label>{"Delimiter"|i18n($i18n_context)}:</label>
+            <label>{"Delimiter"|i18n( 'extension/enhancedselection2/class/edit' )}:</label>
             <input type="text"
                    name="ContentClass_sckenhancedselection_delimiter_{$id}"
                    value="{$content.delimiter|wash}"
@@ -169,7 +169,7 @@
     </div>
 
     <div class="block">
-        <label>{"Database query"|i18n($i18n_context)}:</label>
+        <label>{"Database query"|i18n( 'extension/enhancedselection2/class/edit' )}:</label>
         <textarea rows="5"
                   cols="80"
                   name="ContentClass_sckenhancedselection_query_{$id}">{$content.query|wash}</textarea>
