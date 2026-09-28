@@ -17,7 +17,7 @@ class enhancedselection2Info
     {
         return array(
             'Name' => "Enhanced Selection datatype",
-            'Version' => "2.1.3",
+            'Version' => "2.1.4",
             'Copyright' => "Copyright (C) 2003-2008 SCK-CEN (Belgian Nuclear Research Centre)",
             'Author' => "Original author: Hans Melis. Ported to PHP 5 by Tom Couwberghs",
             'License' => "GNU General Public License v2.0 (or any later version)",
