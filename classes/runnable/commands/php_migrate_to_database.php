@@ -2,6 +2,7 @@
 /**
  * The code of extension/enhancedselection2/bin/php/migrate_to_database.php, moved into a class (#207 stage 1). The file extension/enhancedselection2/bin/php/migrate_to_database.php is one call to it.
  * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * @description Migrate the enhanced selection datatype to the version that stores its data in a database table
  */
 
 namespace Exponential\Command\Extension\Enhancedselection2
