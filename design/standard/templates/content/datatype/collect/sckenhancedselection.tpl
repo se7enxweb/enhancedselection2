@@ -12,7 +12,7 @@
         {section var=option loop=$available_options}
             <div class="form-row">
                 <input type="checkbox" name="ContentObjectAttribute_sckenhancedselection_selection_{$id}[]" value="{$option.item.identifier|wash}"
-                       {if $content|contains($option.item.identifier))}checked="checked"{/if}>
+                       {if $content|contains($option.item.identifier)}checked="checked"{/if}>
                 {$option.item.name|wash}
             </div>
         {/section}
