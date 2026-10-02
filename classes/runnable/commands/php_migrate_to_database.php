@@ -17,9 +17,9 @@ class MigrateToDatabase extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance(
+        $script = $this->script(
             array(
                 'description' => "Migrates sckenhancedselection datatype to version which stores content object data to database table.",
                 'use-session' => true,
@@ -29,7 +29,7 @@ class MigrateToDatabase extends \Exponential\Runnable\Command
         );
 
         $script->startup();
-        $script->getOptions();
+        $this->options();
         $script->initialize();
 
         $cli->warning( "This script will NOT republish objects, but rather update ALL versions" );

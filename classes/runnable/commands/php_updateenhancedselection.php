@@ -16,9 +16,9 @@ class Updateenhancedselection extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
+        $cli = $this->cli();
 
-        $script = \eZScript::instance(
+        $script = $this->script(
             array(
                 'description' => 'Update the datatype ezenhancedselection to the new version',
                 'use-session' => false,
