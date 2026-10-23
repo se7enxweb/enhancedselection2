@@ -37,11 +37,11 @@
     </message>
     <message>
         <source>Move up</source>
-        <translation>Przesuń w górę</translation>
+        <translation>Przesunąć w górę</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Przesuń w dół</translation>
+        <translation>Przesunąć w dół</translation>
     </message>
     <message>
         <source>New option</source>
@@ -49,11 +49,11 @@
     </message>
     <message>
         <source>Remove selected option(s)</source>
-        <translation>Usuń zaznaczone opcje</translation>
+        <translation>Usunąć zaznaczone opcje</translation>
     </message>
     <message>
         <source>Sort options</source>
-        <translation>Sortuj opcje</translation>
+        <translation>Sortować opcje</translation>
     </message>
     <message>
         <source>A-Z</source>
@@ -160,7 +160,7 @@
     </message>
     <message>
         <source>Expand choices</source>
-        <translation>Rozwiń opcje</translation>
+        <translation>Rozwinąć opcje</translation>
     </message>
     <message>
         <source>Yes</source>
